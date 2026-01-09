@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Tienda | Tu Servidor</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+
+</head>
+<body>
+
+<header>
+    <h1> Tienda Oficial de Proyecto Galleta! </h1>
+    <p>Rangos de Discord y eventos de Minecraft</p>
+</header>
+
+<main class="store">
+
+    <div class="card">
+        <h2>Rango VIP + (MENSUAL) <i class="fa-solid fa-crown"></i>
+</h2>
+        <p class="price">$5 USD</p>
+        <ul>
+            <li>⚠️ ES NECESARIO RANGO VIP</li>
+            <li>📥 Acceso anticipado a eventos</li>
+            <li>🎟️ Prioridad media en eventos</li>
+            <li>🎁 Sorteos exclusivos VIP+</li>
+            <li>🎤 Prioridad en voice channels</li>
+            <li>✔️ Todos los beneficios de VIP</li>
+        </ul>
+        <button type="button" class="buy-btn"
+onclick="confirmarPago('https://www.paypal.com/invoice/p/#FZXLDE42UUBQH6VC')">
+    Comprar
+</button>
+
+    </div>
+
+    <div class="card">
+        <h2> VIP (PERMANENTE) <i class="fa-solid fa-star"> </i> </h2>
+        <p class="price">$10 USD</p>
+        <ul>
+            <li>⭐ Rol VIP exclusivo</li>
+            <li>🔓 Acceso a canales VIP</li>
+            <li>⏳ Slowmode reducido en chats</li>
+            <li>🎟️ Prioridad baja en eventos</li>
+            <li>💬 Soporte preferente </li>
+        </ul>
+        <button type="button" class="buy-btn"
+onclick="confirmarPago('https://www.paypal.com/invoice/p/#KBXY667FN6JBBZ5S')">
+    Comprar
+</button>
+        
+    </div>
+
+    <div class="card">
+        <h2>ELITE (PERMANENTE) <i class="fa-solid fa-gem"></i>
+</h2>
+        <p class="price">$15 USD</p>
+        <ul>
+            <li> Clausulas y precio por confirmar </li>
+            <li>  </li>
+            <li>  </li>
+            <li>  </li>
+        </ul>
+        <button type="button" class="buy-btn"
+onclick="confirmarPago('')">
+    PROXIMAMENTE
+</button>
+
+    </div>
+
+</main>
+
+<footer>
+
+    <div class="socials">
+    <a href="https://discord.gg/yc2tdqQ6y2" target="_blank" aria-label="Discord">
+        <i class="fa-brands fa-discord"></i>
+    </a>
+
+    <a href="luegoo link" target="_blank" aria-label="Twitch">
+        <i class="fa-brands fa-twitch"></i>
+    </a>
+
+    <a href="luegooo link" target="_blank" aria-label="X">
+        <i class="fa-brands fa-x-twitter"></i>
+    </a>
+</div>
+
+    <p>⚠️ La entrega es manual. Después de pagar, abre un ticket en Discord con tu comprobante.</p>
+    <p class="copyright">
+    © 2026 Proyecto Galleta. Todos los derechos reservados.
+</p>
+
+<p class="legal">
+    Este servidor y tienda no están afiliados, asociados ni respaldados por
+    Mojang Studios ni Microsoft Corporation.
+</p>
+
+    <p>Soporte: Discord</p>
+</footer>
+
+    <script>
+let paypalURL = "";
+
+function confirmarPago(url) {
+    paypalURL = url;
+    document.getElementById("modal").style.display = "flex";
+}
+
+function cerrarModal() {
+    document.getElementById("modal").style.display = "none";
+}
+
+function irAPaypal() {
+    window.open(paypalURL, "_blank");
+    cerrarModal();
+}
+</script>
+
+    
+<!-- MODAL -->
+<div id="modal" class="modal-overlay">
+    <div class="modal">
+        <h2>Confirmar compra</h2>
+        <p>
+            Serás redirigido a <strong>PayPal</strong> para completar el pago.<br><br>
+            ⚠️ La entrega es <strong>manual</strong>.<br>
+            Abre un ticket en Discord con tu comprobante.
+        </p>
+
+        <div class="modal-buttons">
+            <button class="cancel-btn" onclick="cerrarModal()">Cancelar</button>
+            <button class="confirm-btn" onclick="irAPaypal()">Continuar</button>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
+
+
